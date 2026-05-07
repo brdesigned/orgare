@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Shop | Orgare</title>
+  <meta name="description" content="Shop Orgare skincare. Natural face serum and nail serum designed to hydrate, nourish, and restore your skin and nails.">
+
+  <!-- Fonts (same as your home page if you're using this) -->
+  <link rel="stylesheet" href="https://use.typekit.net/bhb7rls.css">
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="shop-page">
+
+
+    <!-- RESTOCK POPUP -->
+<div class="restock-overlay" id="restockOverlay">
+  <div class="restock-popup">
+    <button class="restock-close" id="restockClose">×</button>
+    <p class="restock-title">We're restocking! 🌸</p>
+    <p class="restock-sub">Follow us to stay updated!</p>
+    <div class="restock-socials">
+      <a href="https://www.instagram.com/orgare.skincare/" aria-label="Instagram" target="_blank">
+        <img src="images/insta.svg" alt="Instagram">
+      </a>
+      <a href="https://www.tiktok.com/@orgare.skincare" aria-label="TikTok" target="_blank">
+        <img src="images/TikTok.svg" alt="TikTok">
+      </a>
+    </div>
+  </div>
+</div>
+
+
+  <!-- NAVBAR -->
+  <nav class="shop-nav">
+    <button class="nav-pill nav-left" id="openMenu" type="button">
+      <span class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+      <span>MENU</span>
+    </button>
+
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo-color.svg" alt="Orgare">
+    </a>
+
+    <a href="#" class="nav-pill nav-right">CHECKOUT</a>
+  </nav>
+
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+<aside class="side-menu" id="sideMenu">
+  <button class="menu-close" id="closeMenu" type="button">×</button>
+
+  <nav class="side-menu-links">
+    <a href="index.html#home" class="side-menu-link">
+      <img src="images/menu-petal.svg" alt="">
+      <span>HOME</span>
+    </a>
+
+    <a href="#" class="side-menu-link shop-current">
+      <img src="images/menu-petal.svg" alt="">
+      <span>SHOP</span>
+    </a>
+
+    <a href="index.html#about" class="side-menu-link">
+      <img src="images/menu-petal.svg" alt="">
+      <span>ABOUT</span>
+    </a>
+
+    <a href="index.html#contact" class="side-menu-link">
+      <img src="images/menu-petal.svg" alt="">
+      <span>CONTACT</span>
+    </a>
+  </nav>
+
+  <div class="side-menu-socials">
+    <a href="https://www.instagram.com/orgare.skincare/" aria-label="Instagram">
+      <img src="images/insta.svg" alt="">
+    </a>
+
+    <a href="https://www.tiktok.com/@orgare.skincare" aria-label="TikTok">
+      <img src="images/TikTok.svg" alt="">
+    </a>
+  </div>
+</aside>
+
+
+  <!-- MAIN -->
+  <main class="shop-main">
+
+    <!-- Background flowers -->
+    <img class="shop-bg-flower shop-bg-flower-left" src="images/bg-flower.svg" alt="">
+    <img class="shop-bg-flower shop-bg-flower-right" src="images/bg-flower.svg" alt="">
+
+    <!-- FACE SERUM -->
+    <section class="shop-product shop-product-face">
+      <img class="shop-flower shop-flower-face" src="images/pink-white-flower.svg" alt="">
+
+      <div class="shop-product-copy">
+        <h1>Face Serum</h1>
+        <p>
+          A lightweight serum<br>
+          designed to hydrate, soothe,<br>
+          and restore healthy, radiant<br>
+          skin.
+        </p>
+
+        <div class="shop-actions">
+          <a href="#" class="shop-cart-btn shop-cart-btn-pink">
+            <span>ADD TO CART</span>
+          </a>
+          <a href="face-serum.html" class="learn-more">LEARN MORE</a>
+        </div>
+      </div>
+
+      <img class="shop-product-img face-serum-img" src="images/face-serum.png" alt="Face Serum">
+    </section>
+
+    <!-- NAIL SERUM -->
+    <section class="shop-product shop-product-nail">
+      <img class="shop-flower shop-flower-nail" src="images/blue-white-flower.svg" alt="">
+
+      <img class="shop-product-img nail-serum-img" src="images/nail-serum-2.png" alt="Nail Serum">
+
+      <div class="shop-product-copy">
+        <h2>Nail Serum</h2>
+        <p>
+          A nourishing formula<br>
+          designed to strengthen,<br>
+          hydrate, and grow healthier<br>
+          nails.
+        </p>
+
+        <div class="shop-actions">
+          <a href="#" class="shop-cart-btn shop-cart-btn-blue">
+            <span>ADD TO CART</span>
+          </a>
+          <a href="nail-serum.html" class="learn-more">LEARN MORE</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <script>
+    const openMenu = document.getElementById("openMenu");
+    const closeMenu = document.getElementById("closeMenu");
+    const sideMenu = document.getElementById("sideMenu");
+    const menuOverlay = document.getElementById("menuOverlay");
+    const menuLinks = document.querySelectorAll(".side-menu-link");
+  
+    function openSideMenu() {
+      sideMenu.classList.add("active");
+      menuOverlay.classList.add("active");
+    }
+  
+    function closeSideMenu() {
+      sideMenu.classList.remove("active");
+      menuOverlay.classList.remove("active");
+    }
+  
+    openMenu.addEventListener("click", openSideMenu);
+    closeMenu.addEventListener("click", closeSideMenu);
+    menuOverlay.addEventListener("click", closeSideMenu);
+  
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        if (link.classList.contains("shop-current")) {
+          e.preventDefault();
+        }
+  
+        closeSideMenu();
+      });
+    });
+  </script>
+
+
+<!--Restock POPUP-->
+<script>
+  const restockOverlay = document.getElementById("restockOverlay");
+  const restockClose = document.getElementById("restockClose");
+  restockClose.addEventListener("click", () => {
+    restockOverlay.classList.add("hidden");
+  });
+  restockOverlay.addEventListener("click", (e) => {
+    if (e.target === restockOverlay) restockOverlay.classList.add("hidden");
+  });
+</script>
+
+
+</body>
+</html>

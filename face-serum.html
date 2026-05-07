@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Face Serum | Orgare</title>
+        <meta name="description" content="A lightweight serum designed to hydrate, soothe, and restore healthy, radiant skin.">
+
+        <link rel="stylesheet" href="https://use.typekit.net/bhb7rls.css">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body class="face-serum">
+
+        <!-- NAVBAR -->
+  <nav class="shop-nav">
+    <button class="nav-pill nav-left" id="openMenu" type="button">
+      <span class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+      <span>MENU</span>
+    </button>
+
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo-color.svg" alt="Orgare">
+    </a>
+
+    <a href="#" class="nav-pill nav-right">BUY NOW</a>
+  </nav>
+
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+<aside class="side-menu" id="sideMenu">
+  <button class="menu-close" id="closeMenu" type="button">×</button>
+
+  <nav class="side-menu-links">
+    <a href="index.html#home" class="side-menu-link">
+      <img src="images/menu-petal.svg" alt="">
+      <span>HOME</span>
+    </a>
+
+    <a href="shop.html" class="side-menu-link">
+      <img src="images/menu-petal.svg" alt="">
+      <span>SHOP</span>
+    </a>
+
+    <a href="index.html#about" class="side-menu-link">
+      <img src="images/menu-petal.svg" alt="">
+      <span>ABOUT</span>
+    </a>
+
+    <a href="index.html#contact" class="side-menu-link">
+      <img src="images/menu-petal.svg" alt="">
+      <span>CONTACT</span>
+    </a>
+  </nav>
+
+  <div class="side-menu-socials">
+    <a href="https://www.instagram.com/orgare.skincare/" aria-label="Instagram">
+      <img src="images/insta.svg" alt="">
+    </a>
+
+    <a href="https://www.tiktok.com/@orgare.skincare" aria-label="TikTok">
+      <img src="images/TikTok.svg" alt="">
+    </a>
+  </div>
+</aside>
+
+<main class="face-main">
+    <img class="face-serum-details" src="images/face-serum.png" alt="Orgare Face Serum">
+    <div class="face-serum-text">
+        <h1 class="product-title">Natural Face Serum.</h1>
+        <p class="first-line">A lightweight, fast-absorbing serum designed to deeply hydrate, smooth, and support your skin’s natural balance.</p>
+        <p>Perfect for daily use, this serum works to enhance your moisturizer and leave your skin feeling refreshed, balanced, and healthy-looking.</p>
+        <a href="#" class="product-buy-btn product-buy-btn-face"><span>BUY NOW</span></a>
+    </div>
+</main>
+    
+    <section class="ingredients">
+        <h2>✨ Ingredients</h2>
+        <h3>Niacinamide (Vitamin B3)</h3>
+        <p>Helps refine the appearance of pores, balance oil, and support a healthy skin barrier for smoother-looking skin.</p>
+        <h3>Hyaluronic Acid (Sodium Hyaluronate)</h3>
+        <p>A powerful hydrator that attracts moisture to the skin, leaving it plump, soft, and refreshed.</p>
+        <h3>Glycerin (Plant-Derived)</h3>
+        <p>Draws moisture into the skin and helps maintain long-lasting hydration.</p>
+        <h3>Vitamin E (Tocopherol)</h3>
+        <p>An antioxidant that helps protect and condition the skin while supporting overall skin health.</p>
+        <h3>Preservative System</h3>
+        <p>Carefully selected to keep the formula fresh, safe, and free from harmful bacteria, mold, and yeast.</p>
+    </section>
+    <section class="instructions">
+        <h2>Instructions:</h2>
+        <ul>
+            <li>Apply 2-3 drops to clean, damp face and neck.</li>
+            <li>Gently press into skin until fully absorbed.</li>
+            <li>Follow with moisturizer.</li>
+            <li>Use morning and evening.</li>
+        </ul>
+        <img class="face-bottle" src="images/face-bottle.png" alt="Face Serum Bottle">
+    </section>
+
+
+
+<script>
+    const openMenu = document.getElementById("openMenu");
+    const closeMenu = document.getElementById("closeMenu");
+    const sideMenu = document.getElementById("sideMenu");
+    const menuOverlay = document.getElementById("menuOverlay");
+    const menuLinks = document.querySelectorAll(".side-menu-link");
+  
+    function openSideMenu() {
+      sideMenu.classList.add("active");
+      menuOverlay.classList.add("active");
+    }
+  
+    function closeSideMenu() {
+      sideMenu.classList.remove("active");
+      menuOverlay.classList.remove("active");
+    }
+  
+    openMenu.addEventListener("click", openSideMenu);
+    closeMenu.addEventListener("click", closeSideMenu);
+    menuOverlay.addEventListener("click", closeSideMenu);
+  
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        if (link.classList.contains("shop-current")) {
+          e.preventDefault();
+        }
+  
+        closeSideMenu();
+      });
+    });
+  </script>
+
+    </body>
+</html>
