@@ -5,6 +5,10 @@
     box-sizing: border-box;
   }
   
+  .html{
+    overflow-x: hidden;
+  }
+
   :root {
     --light-pink: #F17A90;
     --hot-pink: #EB008B;
@@ -2661,7 +2665,7 @@
   .shop-main {
     margin-top: 70px;
     position: relative;
-    min-height: 1500px;
+    min-height: 1700px;
     padding: 220px 0 160px;
     overflow: visible;
   }
@@ -3771,6 +3775,17 @@
     display: flex;
     text-align: center;
     margin-left: 60px;
+  }
+
+  .products-copy-left,
+  .products-copy-right {
+  position: relative;
+  z-index: 10;
+  }
+
+  .product-btn {
+  position: relative;
+  z-index: 10;
   }
 
   /* Hide desktop single image */
